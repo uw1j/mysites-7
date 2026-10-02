@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7MODI | الروابط الرسمية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* خلفية متحركة */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            animation: bgMove 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes bgMove {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            padding: 30px 22px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 40px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(102, 126, 234, 0.7); }
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            margin: 20px 0;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: right 0.5s ease;
+        }
+
+        .link-card:hover::before {
+            right: 100%;
+        }
+
+        .link-card:hover {
+            transform: translateX(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            transition: transform 0.35s ease;
+        }
+
+        .link-card:hover .link-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .link-info {
+            flex: 1;
+            text-align: right;
+        }
+
+        .link-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 3px;
+            color: #ffffff;
+        }
+
+        .link-desc {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.55);
+            font-weight: 400;
+        }
+
+        .link-arrow {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover .link-arrow {
+            color: #fff;
+            transform: translateX(-5px);
+        }
+
+        /* ألوان الأيقونات */
+        .icon-telegram-main { background: linear-gradient(135deg, #0088cc, #00b4db); }
+        .icon-telegram-store { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .icon-telegram-channel { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .icon-telegram-group { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        .icon-bot-decoration { background: linear-gradient(135deg, #fa709a, #fee140); }
+        .icon-bot-ai { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+        .icon-youtube { background: linear-gradient(135deg, #ff0000, #ff4b2b); }
+        .icon-games { background: linear-gradient(135deg, #667eea, #764ba2); }
+
+        /* البطاقة المميزة (الألعاب) */
+        .featured {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.25), rgba(118, 75, 162, 0.25));
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            margin-top: 5px;
+        }
+
+        .featured:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.35), rgba(118, 75, 162, 0.35));
+            border-color: rgba(102, 126, 234, 0.6);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .badge {
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            background: linear-gradient(135deg, #f5576c, #f093fb);
+            color: white;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 12px;
+        }
+
+        .footer .heart {
+            color: #f5576c;
+            animation: heartbeat 1.5s ease infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* تجاوب مع الشاشات الصغيرة */
+        @media (max-width: 400px) {
+            .container { padding: 22px 16px; }
+            h1 { font-size: 20px; }
+            .link-card { padding: 12px 14px; gap: 12px; }
+            .link-icon { width: 40px; height: 40px; min-width: 40px; font-size: 18px; }
+            .link-title { font-size: 14px; }
+            .link-desc { font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- الملف الشخصي -->
+        <div class="profile">
+            <div class="avatar">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <h1>7MODI</h1>
+            <p class="subtitle">جميع قنواتنا وحساباتنا الرسمية</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- الروابط -->
+        <div class="links">
+
+            <!-- 1. القناة التلغرام الأساسية -->
+            <a href="https://t.me/M_D_Q_7" target="_blank" rel="noopener" class="link-card">
+                <div class="link-icon icon-telegram-main">
+                    <i class="fab fa-telegram-plane"></i>
+                </div>
+                <div class="link-info">
+                    <div class="link-title">القناة الأساسية</div>
+                    <div class="link-desc">القناة الرسمية الرئيسية على تلغرام</div>
+                </div>
+                <i class="fas fa-chevron-left link-arrow"></i>
+            </a>
+
+            <!-- 2. متجر تلغرام -->
+            <a href="https://t.me/AL_IRAQIS" target="_blank" rel="noopener" class="link-card">
+                <div class="link-icon icon-telegram-store">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="link-info">
+                    <div class="link-title">متجر تلغرام</div>
+                    <div class="link-desc">تسوق أفضل المنتجات والخدمات</div>
+                </div>
+                <i class="fas fa-chevron-left link-arrow"></i>
+            </a>
+
+            <!-- 3. قناة تلغرام -->
+            <a href="https://t.me/M_D_H_3" target="_blank" rel="noopener" class="link-card">
+                <div class="link-icon icon-telegram-channel">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="link-info">
+                    <div class="link-title">قناة تلغرام</div>
+                    <div class="link-desc">آخر الأخبار والتحديثات</div>
+                </div>
+                <i class="fas fa-chevron-left link-arrow"></i>
+            </a>
+
+            <!-- 4. مجموعة تلغرام -->
+            <a href="https://t.me/M_D_C6" target="_blank" rel="noopener" class="link-card">
+                <div class="link-icon icon-telegram-group">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="link-info">
+                    <div class="link-title">مجموعة تلغرام</div>
+                    <div class="link-desc">تواصل مع الأعضاء وتبادل الخبرات</div>
+                </div>
+                <i class="fas fa-chevron-left link-arrow"></i>
+            </a>
+
+            <!-- 5. بوت الزخرفة -->
+            <a href="https://t.me/M_D_R_7_BOT" target="_blank" rel="noopener" class="link-card">
+                <div class="link-icon icon-bot-decoration">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <div class="link-info">
+                    <div class="link-title">بوت الزخرفة</div>
+                    <div class="link-desc">زخرفة الأسماء والنصوص باحترافية</div>
+                </div>
+                <i class="fas fa-chevron-left link-arrow"></i>
+            </a>
+
+            <!-- 6. بوت الذكاء الاصطناعي -->
+            <a href="https://t.me/chatgptiraqv1bot" target="_blank" rel="noopener" class="link-card">
+                <div class="link-icon icon-bot-ai">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="link-info">
+                    <div class="link-title">بوت الذكاء الاصطناعي</div>
+                    <div class="link-desc">مساعد ذكي يجيب على جميع أسئلتك</div>
+                </div>
+                <i class="fas fa-chevron-left link-arrow"></i>
+            </a>
+
+            <!-- 7. قناة يوتيوب -->
+            <a href="https://www.youtube.com/@uw1.c" target="_blank" rel="noopener" class="link-card">
+                <div class="link-icon icon-youtube">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <div class="link-info">
+                    <div class="link-title">قناة يوتيوب</div>
+                    <div class="link-desc">لو حاب تدعمني اشترك بيها</div>
+                </div>
+                <i class="fas fa-chevron-left link-arrow"></i>
+            </a>
+
+            <!-- 8. موقع الألعاب (مميز) -->
+            <a href="https://uw1j.github.io/gameverse/" target="_blank" rel="noopener" class="link-card featured">
+                <span class="badge">الأهم</span>
+                <div class="link-icon icon-games">
+                    <i class="fas fa-dice-d20"></i>
+                </div>
+                <div class="link-info">
+                    <div class="link-title">GameVerse - موقع الألعاب</div>
+                    <div class="link-desc">عالم الألعاب الكامل في مكان واحد</div>
+                </div>
+                <i class="fas fa-chevron-left link-arrow"></i>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            صُنع بـ <span class="heart">❤️</span> بواسطة 7MODI
+        </div>
+    </div>
+
+</body>
+</html>
